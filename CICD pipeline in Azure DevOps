@@ -1,0 +1,9 @@
+CI/CD pipeline in Azure DevOps for a production application?
+
+We used Azure Repos for source control with a GitFlow branching strategy.
+CI pipelines were built using Azure DevOps YAML pipelines to trigger on pull requests and main branch merges.
+The pipeline had multiple stages—Build, Terraform Plan, and Terraform Apply.
+For CD, Terraform was integrated using Azure service connections, with separate state files per environment.
+Manual approvals were enabled for production deployments.
+Rollback was handled using Terraform state and versioned infrastructure code.
+Secrets were stored in Azure Key Vault and accessed securely in pipelines.”
