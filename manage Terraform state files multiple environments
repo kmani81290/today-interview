@@ -1,0 +1,8 @@
+“We store Terraform state remotely using an Azure Storage Account with a backend configuration, enabling state locking and versioning.
+Each environment—Dev, QA, and Prod—has a separate state file using different backend keys or separate storage containers.
+
+In Azure DevOps pipelines, we run terraform init and terraform plan in the CI stage to validate changes.
+The terraform apply step is executed only after manual approval, especially for production environments.
+
+Rollback is not automatic in Terraform; if an issue occurs, we either re-apply the previous stable code version or use state file versions to restore infrastructure.
+All Terraform code is version-controlled in Git.”
